@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="lenis lenis-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | SeaHistoryChecks - Transparency in Maritime Data</title>
+<meta content="Discover the story behind SeaHistoryChecks. Dedicated to providing accurate, detailed vessel reports based on HIN and Hull numbers." name="description"/>
+<link href="style.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+.glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); }
+.glass-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); }
+.text-coral-500 { color: #f97316; }
+.bg-coral-500 { background-color: #f97316; }
+.hover\:bg-coral-600:hover { background-color: #ea580c; }
+.btn-primary { background: linear-gradient(135deg, #f97316, #ea580c); color: white; border-radius: 9999px; font-weight: 700; transition: all 0.3s; display: inline-block; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(249,115,22,0.3); }
+.text-text-muted { color: #94a3b8; }
+.display-md { font-size: 3.5rem; font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; }
+.text-gradient { background: linear-gradient(135deg, #f97316, #fdba74); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.reveal-up { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+.nav-link { position: relative; }
+.nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #f97316; transition: width 0.3s; }
+.nav-link:hover::after { width: 100%; }
+#mobile-menu { opacity: 0; visibility: hidden; transition: opacity 0.4s, visibility 0.4s; }
+#mobile-menu.active { opacity: 1; visibility: visible; }
+@media (max-width: 768px) {
+  .display-md { font-size: 2rem; }
+}
+.card-dark { background: #1e293b; border-color: rgba(255,255,255,0.1); }
+.text-on-dark { color: #94a3b8; }
+.text-white-pure { color: #f1f5f9; }
+</style></head>
+<body class="bg-[#0f172a]">
+<!-- Premium Navigation -->
+<nav class="fixed top-0 w-full z-50 transition-all duration-500 py-6 bg-blue-950/80 backdrop-blur-xl" id="main-nav">
+<div class="container mx-auto px-6 flex justify-between items-center">
+<a class="flex items-center space-x-2 group" href="index.html">
+<div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<span class="text-2xl font-bold tracking-tighter nav-logo-text text-white">Sea<span class="text-coral-500">HistoryChecks</span></span>
+</a>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="index.html">Home</a>
+<a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="about.html">About</a>
+<a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="faq.html">FAQ</a>
+<a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="pricings.html">Pricings</a>
+<a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="contact.html">Contact</a>
+<a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="payment.html">Payment</a>
+<a class="btn-primary py-3 px-8 text-sm" href="pricings.html">Get Report</a>
+</div>
+<button class="md:hidden text-white hover:text-coral-500 transition-colors p-2" id="mobile-menu-btn">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</nav>
+<!-- Premium Mobile Menu Overlay -->
+<div class="fixed inset-0 z-40 md:hidden glass flex flex-col justify-center items-center space-y-8 text-center p-6" id="mobile-menu">
+<a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="index.html">Home</a>
+<a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="about.html">About</a>
+<a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="faq.html">FAQ</a>
+<a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="pricings.html">Pricings</a>
+<a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="contact.html">Contact</a>
+<a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="payment.html">Payment</a>
+<a class="btn-primary px-12 py-4" href="pricings.html">Get Report</a>
+</div>
+<!-- Header Section -->
+<header class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-950 to-slate-900"></div>
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 25% 50%, white 0%, transparent 50%)"></div>
+<div class="relative text-center">
+<h1 class="text-5xl md:text-7xl font-black text-white mb-4">About Us</h1>
+<div class="flex justify-center items-center space-x-2 text-white/60 text-sm">
+<a href="index.html" class="hover:text-white transition">Home</a>
+<span>/</span>
+<span class="text-coral-500">About Us</span>
+</div>
+</div>
+</header>
+<!-- Our Mission Section -->
+<section class="py-24 bg-[#0f172a]">
+<div class="container mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="reveal-up">
+<span class="text-coral-500 font-bold uppercase tracking-widest text-xs mb-4 block">Our Mission</span>
+<h2 class="display-md text-white mb-8">Our <span class="text-gradient">Mission</span></h2>
+<p class="text-text-muted text-lg leading-relaxed mb-6">At SeaHistoryChecks, our mission is simple: to provide you with the most accurate, detailed, and reliable information about ships and boats around the globe. We specialize in delivering comprehensive reports based on Hull Identification Numbers (HIN) and Hull numbers, giving you the tools to make informed decisions in the maritime world.</p>
+<p class="text-text-muted text-lg leading-relaxed mb-8">Whether you're a shipowner, buyer, seller, maritime professional, or simply a ship enthusiast, we understand how important it is to have access to trustworthy data. That's why we've created a platform that connects you to detailed reports on ships of all types — from pleasure boats to commercial vessels.</p>
+</div>
+<div class="relative reveal-up">
+<div class="glass p-4 rounded-[3rem] shadow-2xl overflow-hidden">
+<img alt="Vessel at sea" class="rounded-[2.5rem] w-full" src="assets/images/our-history3-8fb32cfc.jpg"/>
+</div>
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-coral-500/10 rounded-full blur-3xl animate-pulse"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why We Do What We Do? Section -->
+<section class="py-24 bg-[#1e293b]">
+<div class="container mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="relative reveal-up">
+<div class="glass p-4 rounded-[3rem] shadow-2xl overflow-hidden">
+<img alt="Maritime industry" class="rounded-[2.5rem] w-full" src="assets/images/our-history-2-b5ad8f7d.jpg"/>
+</div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+</div>
+<div class="reveal-up">
+<span class="text-coral-500 font-bold uppercase tracking-widest text-xs mb-4 block">Our Purpose</span>
+<h2 class="display-md text-white mb-8">Why We Do What <span class="text-gradient">We Do?</span></h2>
+<p class="text-text-muted text-lg leading-relaxed mb-6">The maritime industry is vast and complex, with a diverse range of vessels operating across the world. Each ship has its own story — from its builder and specifications to its ownership history and safety records. However, this information is not always easy to access.</p>
+<p class="text-text-muted text-lg leading-relaxed mb-8">At SeaHistoryChecks, we believe transparency and knowledge are key to ensuring safer, more efficient, and more confident decisions in the maritime industry. By offering detailed, up-to-date reports on vessels, we empower our users with the data they need to make decisions with confidence, whether they're investing in a boat, managing a fleet, or researching maritime trends.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose SeaHistoryChecks? Section -->
+<section class="py-24 bg-[#0f172a]">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16 reveal-up">
+<span class="text-coral-500 font-bold uppercase tracking-widest text-xs mb-4 block">Why Us</span>
+<h2 class="display-md text-white mb-6">Why Choose <span class="text-gradient">SeaHistoryChecks?</span></h2>
+<div class="w-24 h-1 bg-coral-500 mx-auto"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="reveal-up bg-[#1e293b] p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-800">
+<div class="w-16 h-16 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center mb-8 text-2xl">📊</div>
+<h3 class="text-xl font-bold mb-4 text-white">Reliable Data</h3>
+<p class="text-text-muted">Our reports are sourced from trusted maritime registries, industry experts, and official data sources.</p>
+</div>
+<div class="reveal-up bg-[#1e293b] p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-800" style="transition-delay: 0.1s;">
+<div class="w-16 h-16 bg-coral-500/20 text-coral-500 rounded-2xl flex items-center justify-center mb-8 text-2xl">🌍</div>
+<h3 class="text-xl font-bold mb-4 text-white">Global Coverage</h3>
+<p class="text-text-muted">We provide reports on ships and boats from all over the world, from local recreational boats to global shipping giants.</p>
+</div>
+<div class="reveal-up bg-[#1e293b] p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-800" style="transition-delay: 0.2s;">
+<div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-2xl flex items-center justify-center mb-8 text-2xl">⚡</div>
+<h3 class="text-xl font-bold mb-4 text-white">Speed &amp; Convenience</h3>
+<p class="text-text-muted">With our easy-to-use platform, you can quickly obtain comprehensive reports in minutes, ensuring you have the information you need, when you need it.</p>
+</div>
+<div class="reveal-up bg-[#1e293b] p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-800">
+<div class="w-16 h-16 bg-purple-500/20 text-purple-400 rounded-2xl flex items-center justify-center mb-8 text-2xl">🔒</div>
+<h3 class="text-xl font-bold mb-4 text-white">Security &amp; Privacy</h3>
+<p class="text-text-muted">We prioritize the safety of your data and offer secure, encrypted transactions to protect your privacy.</p>
+</div>
+<div class="reveal-up bg-[#1e293b] p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-800" style="transition-delay: 0.1s;">
+<div class="w-16 h-16 bg-yellow-500/20 text-yellow-500 rounded-2xl flex items-center justify-center mb-8 text-2xl">🤝</div>
+<h3 class="text-xl font-bold mb-4 text-white">Customer-Centric Service</h3>
+<p class="text-text-muted">Our dedicated customer support team is here to assist with any questions you have, ensuring a smooth experience every time.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Numbers Section -->
+<section class="py-24 bg-blue-900 text-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold mb-4">By the <span class="text-coral-500">Numbers</span></h2>
+</div>
+<div class="grid md:grid-cols-3 gap-12 text-center">
+<div class="reveal-up">
+<div class="text-6xl font-black text-coral-500 mb-4">97k+</div>
+<p class="text-blue-200 text-lg">More Than 97k+ users worldwide who are already using our service</p>
+</div>
+<div class="reveal-up">
+<div class="text-6xl font-black text-coral-500 mb-4">7+</div>
+<p class="text-blue-200 text-lg">More than 7 years of operation in the field of boat reports</p>
+</div>
+<div class="reveal-up">
+<div class="text-6xl font-black text-coral-500 mb-4">95%</div>
+<p class="text-blue-200 text-lg">Percentage of satisfied customers</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-blue-950 text-white pt-24 pb-12">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-16 mb-20">
+<div class="col-span-2">
+<span class="text-2xl font-bold mb-8 block">SeaHistoryChecks</span>
+<p class="text-blue-200/50 max-w-sm mb-10">Advanced vessel data intelligence for the modern maritime market. Ensuring transparency in every transaction.</p>
+<div class="flex space-x-4">
+<div class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/10 transition">FB</div>
+<div class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/10 transition">TW</div>
+<div class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/10 transition">IG</div>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-8 uppercase tracking-widest text-xs">Resources</h4>
+<ul class="space-y-4 text-blue-200/50 text-sm">
+<li><a class="hover:text-white transition" href="index.html">Home</a></li>
+<li><a class="hover:text-white transition" href="faq.html">FAQ Support</a></li>
+<li><a class="hover:text-white transition" href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-8 uppercase tracking-widest text-xs">Legal</h4>
+<ul class="space-y-4 text-blue-200/50 text-sm">
+<li><a class="hover:text-white transition" href="policy.html">Privacy Policy</a></li>
+<li><a class="hover:text-white transition" href="terms.html">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-xs text-blue-200/30 gap-8">
+<div>© Copyright 2020 by SeaHistoryChecks | All rights reserved | Developed by Cyprus Digital Solutions</div>
+</div>
+</div>
+</footer>
+
+<script src="script.js"></script></body>
+</html>

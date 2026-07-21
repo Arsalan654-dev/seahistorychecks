@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>SeaHistoryChecks - Pricings</title>
+  <meta name="title" content="SeaHistoryChecks - Pricings"/>
+  <meta name="description" content="Get your boat history report for $80. Helps in avoiding vessels with costly hidden problems."/>
+  <link href="assets/images/fav-icon-4a0914c1.png" rel="icon" type="image/png"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+    .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .glass-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); }
+    .text-coral-500 { color: #f97316; }
+    .bg-coral-500 { background-color: #f97316; }
+    .bg-coral-500\/10 { background-color: rgba(249,115,22,0.1); }
+    .hover\:bg-coral-600:hover { background-color: #ea580c; }
+    .btn-primary { background: linear-gradient(135deg, #f97316, #ea580c); color: white; border-radius: 9999px; font-weight: 700; transition: all 0.3s; display: inline-block; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(249,115,22,0.3); }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #0f172a; color: #1e293b; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #f97316; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+    #mobile-menu { opacity: 0; visibility: hidden; transition: opacity 0.4s, visibility 0.4s; }
+    #mobile-menu.active { opacity: 1; visibility: visible; }
+    .pricing-card { background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.12); border-radius: 2rem; padding: 3rem; text-align: center; transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+    .pricing-card:hover { transform: translateY(-12px); box-shadow: 0 40px 80px rgba(0,0,0,0.4); border-color: rgba(249,115,22,0.3); }
+    .feature-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: rgba(255,255,255,0.05); border-radius: 1rem; margin-bottom: 0.5rem; transition: all 0.3s; }
+    .feature-item:hover { background: rgba(249,115,22,0.1); transform: translateX(4px); }
+    .check-badge { width: 1.75rem; height: 1.75rem; background: rgba(249,115,22,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .check-badge svg { width: 1rem; height: 1rem; color: #f97316; }
+  </style>
+</head>
+<body class="antialiased">
+
+<nav class="fixed top-0 w-full z-50 transition-all duration-500 py-6 bg-blue-950/80 backdrop-blur-xl" id="main-nav">
+  <div class="container mx-auto px-6 flex justify-between items-center">
+    <a class="flex items-center space-x-2 group" href="index.html">
+      <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </div>
+      <span class="text-2xl font-bold tracking-tighter nav-logo-text text-white">Sea<span class="text-coral-500">HistoryChecks</span></span>
+    </a>
+    <div class="hidden md:flex items-center space-x-10">
+      <a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="index.html">Home</a>
+      <a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="about.html">About</a>
+      <a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="faq.html">FAQ</a>
+      <a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="contact.html">Contact</a>
+      <a class="text-sm font-medium hover:text-white transition nav-link text-white/80" href="payment.html">Payment</a>
+      <a class="btn-primary py-3 px-8 text-sm" href="pricings.html">Get Report</a>
+    </div>
+    <button class="md:hidden text-white hover:text-coral-500 transition-colors p-2" id="mobile-menu-btn">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="fixed inset-0 z-40 md:hidden glass flex flex-col justify-center items-center space-y-8 text-center p-6" id="mobile-menu">
+  <a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="index.html">Home</a>
+  <a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="about.html">About</a>
+  <a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="faq.html">FAQ</a>
+  <a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="contact.html">Contact</a>
+  <a class="text-2xl font-bold text-blue-950 hover:text-coral-500 transition-colors" href="payment.html">Payment</a>
+  <a class="btn-primary px-12 py-4" href="pricings.html">Get Report</a>
+</div>
+
+<header class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-950 to-slate-900"></div>
+  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 25% 50%, white 0%, transparent 50%)"></div>
+  <div class="relative text-center">
+    <h1 class="text-5xl md:text-7xl font-black text-white mb-4">Pricings</h1>
+    <div class="flex justify-center items-center space-x-2 text-white/60 text-sm">
+      <a href="index.html" class="hover:text-white transition">Home</a>
+      <span>/</span>
+      <span class="text-coral-500">Pricings</span>
+    </div>
+  </div>
+</header>
+
+<main class="py-32" style="background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);">
+  <div class="container mx-auto px-6">
+    <div class="max-w-lg mx-auto">
+      <div class="pricing-card">
+        <div class="text-sm font-bold uppercase tracking-widest text-coral-500 mb-6">Single Report</div>
+        <div class="text-6xl md:text-7xl font-black text-white mb-2">$80.00</div>
+        <div class="text-xl text-white/50 mb-8">/Report</div>
+        <p class="text-white/70 text-lg mb-10">Helps in avoiding vessels with costly hidden problems.</p>
+        <div class="text-left space-y-2 mb-12">
+          <div class="feature-item">
+            <div class="check-badge">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+            </div>
+            <span class="text-white/80 font-medium">Accidents</span>
+          </div>
+          <div class="feature-item">
+            <div class="check-badge">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+            </div>
+            <span class="text-white/80 font-medium">Recalls</span>
+          </div>
+          <div class="feature-item">
+            <div class="check-badge">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+            </div>
+            <span class="text-white/80 font-medium">Total Loss</span>
+          </div>
+          <div class="feature-item">
+            <div class="check-badge">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+            </div>
+            <span class="text-white/80 font-medium">Fire/Theft</span>
+          </div>
+          <div class="feature-item">
+            <div class="check-badge">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+            </div>
+            <span class="text-white/80 font-medium">Run Aground</span>
+          </div>
+        </div>
+        <a class="w-full btn-primary py-5 text-lg block text-center" href="payment.html">Get Started Now</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-blue-950 text-white pt-24 pb-12">
+  <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-16 mb-20">
+      <div class="col-span-2">
+        <span class="text-2xl font-bold mb-8 block">SeaHistoryChecks</span>
+        <p class="text-blue-200/50 max-w-sm mb-10">Advanced vessel data intelligence for the modern maritime market. Ensuring transparency in every transaction.</p>
+        <div class="flex space-x-4">
+          <div class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/10 transition">FB</div>
+          <div class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/10 transition">TW</div>
+          <div class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/10 transition">IG</div>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold mb-8 uppercase tracking-widest text-xs">Resources</h4>
+        <ul class="space-y-4 text-blue-200/50 text-sm">
+          <li><a class="hover:text-white transition" href="index.html">Home</a></li>
+          <li><a class="hover:text-white transition" href="faq.html">FAQ Support</a></li>
+          <li><a class="hover:text-white transition" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-8 uppercase tracking-widest text-xs">Legal</h4>
+        <ul class="space-y-4 text-blue-200/50 text-sm">
+          <li><a class="hover:text-white transition" href="policy.html">Privacy Policy</a></li>
+          <li><a class="hover:text-white transition" href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-xs text-blue-200/30 gap-8">
+      <div>&copy; Copyright 2020 by SeaHistoryChecks | All rights reserved | Developed by Cyprus Digital Solutions</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
