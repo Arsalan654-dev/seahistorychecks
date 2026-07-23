@@ -8,6 +8,8 @@
 <meta name="description" content="Secure payment for your vessel history report. PayPal and Credit Card options available."/>
 <link href="assets/images/fav-icon-4a0914c1.png" rel="icon" type="image/png"/>
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body class="antialiased bg-[#0f172a]">
@@ -37,7 +39,7 @@
 </div>
 </nav>
 
-<div class="fixed inset-0 z-40 md:hidden glass flex flex-col justify-center items-center space-y-8 text-center p-6" id="mobile-menu">
+<div class="glass p-6 space-y-8" id="mobile-menu">
 <a class="text-2xl font-bold text-blue-950 hover:text-sky-500 transition-colors" href="index.html">Home</a>
 <a class="text-2xl font-bold text-blue-950 hover:text-sky-500 transition-colors" href="pricings.html">Pricings</a>
 <a class="text-2xl font-bold text-blue-950 hover:text-sky-500 transition-colors" href="about.html">About</a>
@@ -48,6 +50,7 @@
 
 <header class="page-header" style="min-height: 350px; height: 40vh;">
 <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-950 to-slate-900"></div>
+<div class="absolute inset-0 opacity-10" style="background-image: url('assets/images/landing_bg-48e23050.jpg'); background-size: cover; background-position: center;"></div>
 <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 25% 50%, white 0%, transparent 50%)"></div>
 <div class="relative text-center">
 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/80 text-xs font-bold uppercase tracking-widest mb-6">
@@ -203,7 +206,8 @@ PCI Compliant
 </div>
 </div>
 
-<div class="bg-white/5 rounded-2xl p-5">
+<div class="bg-white/5 rounded-2xl p-5 relative overflow-hidden">
+<img alt="" class="absolute top-0 right-0 w-24 h-24 opacity-10 pointer-events-none" src="assets/images/yawl-dark-a5e364ca.png"/>
 <h4 class="text-white font-bold text-sm mb-4 flex items-center gap-2">
 <svg class="w-5 h-5 text-sky-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
 What's Included
@@ -229,10 +233,10 @@ Theft & Recall Information
 </div>
 
 <div class="mt-6 flex items-center justify-center gap-4 text-white/20 text-xs">
-<img alt="Visa" class="h-6 opacity-50 grayscale" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"/>
-<img alt="Mastercard" class="h-6 opacity-50 grayscale" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"/>
-<img alt="Amex" class="h-6 opacity-50 grayscale" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"/>
-<img alt="PayPal" class="h-5 opacity-50 grayscale" src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"/>
+<img alt="Visa" class="h-6 opacity-50 grayscale" src="assets/images/service-1-79431115.png"/>
+<img alt="Mastercard" class="h-6 opacity-50 grayscale" src="assets/images/service-2-d164ae8b.png"/>
+<img alt="Amex" class="h-6 opacity-50 grayscale" src="assets/images/service-3-c89d939b.png"/>
+<img alt="PayPal" class="h-5 opacity-50 grayscale" src="assets/images/service-4-86861766.png"/>
 </div>
 </div>
 </div>
@@ -346,5 +350,66 @@ document.getElementById('success-modal')?.addEventListener('click', function(e) 
 if (e.target === this) { this.classList.add('hidden'); this.classList.remove('flex'); }
 });
 </script>
+<a class="hidden" href="#" id="back-to-top" title="Back to top"><img class="arrow-up" src="assets/images/a-d0bb17d7.svg"/></a>
+<script>
+(function(){
+  var btn = document.getElementById('mobile-menu-btn');
+  var menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      menu.classList.toggle('active');
+      document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        menu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+})();
+</script>
+<script src="script.js"></script>
+<!-- Chatbot Widget -->
+<button class="chatbot-btn" id="chatbot-btn" aria-label="Chat">
+  <svg class="chat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <svg class="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+<div class="chatbot-panel" id="chatbot-panel">
+  <div class="chatbot-header">
+    <div class="avatar">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="1.5"/>
+        <path d="m9 12 2 2 4-4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="info">
+      <h4>SeaHistory Bot</h4>
+      <span>Online</span>
+    </div>
+  </div>
+  <div class="chatbot-messages" id="chatbot-messages">
+    <div class="chatbot-msg bot">Hi! I'm the SeaHistoryChecks assistant. Ask me about our vessel reports, pricing, or anything maritime. How can I help?</div>
+  </div>
+  <div class="chatbot-suggestions" id="chatbot-suggestions">
+    <button data-query="What services do you offer?">Services</button>
+    <button data-query="How much does a report cost?">Pricing</button>
+    <button data-query="How long does it take to get a report?">Report Time</button>
+    <button data-query="What countries do you cover?">Coverage</button>
+  </div>
+  <div class="chatbot-input-wrap">
+    <input id="chatbot-input" placeholder="Type your question..." type="text"/>
+    <button id="chatbot-send" aria-label="Send">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+</div>
 </body>
 </html>

@@ -1,100 +1,41 @@
-// =============================================================
-//  SeaHistoryChecks - Main JavaScript
-// =============================================================
-
-// === Lenis Smooth Scroll (from CDN) ===
-(function() { try {
-!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t||self).Lenis=e()}(this,function(){function t(t,e){for(var i=0;i<e.length;i++){var o=e[i];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,"symbol"==typeof(n=function(t,e){if("object"!=typeof t||null===t)return t;var i=t[Symbol.toPrimitive];if(void 0!==i){var o=i.call(t,"string");if("object"!=typeof o)return o;throw new TypeError("@@toPrimitive must return a primitive value.")}return String(t)}(o.key))?n:String(n),o)}var n}function e(e,i,o){return i&&t(e.prototype,i),o&&t(e,o),Object.defineProperty(e,"prototype",{writable:!1}),e}function i(){return i=Object.assign?Object.assign.bind():function(t){for(var e=1;e<arguments.length;e++){var i=arguments[e];for(var o in i)Object.prototype.hasOwnProperty.call(i,o)&&(t[o]=i[o])}return t},i.apply(this,arguments)}function o(t,e,i){return Math.max(t,Math.min(e,i))}var n=/*#__PURE__*/function(){function t(){}var e=t.prototype;return e.advance=function(t){var e,i,n,s;if(this.isRunning){var r=!1;if(this.lerp)this.value=(i=this.value,n=this.to,(1-(s=1-Math.exp(-60*this.lerp*t)))*i+s*n),Math.round(this.value)===this.to&&(this.value=this.to,r=!0);else{this.currentTime+=t;var l=o(0,this.currentTime/this.duration,1),h=(r=l>=1)?1:this.easing(l);this.value=this.from+(this.to-this.from)*h}null==(e=this.onUpdate)||e.call(this,this.value,r),r&&this.stop()}},e.stop=function(){this.isRunning=!1},e.fromTo=function(t,e,i){var o=i.lerp,n=void 0===o?.1:o,s=i.duration,r=void 0===s?1:s,l=i.easing,h=void 0===l?function(t){return t}:l,a=i.onStart,c=i.onUpdate;this.from=this.value=t,this.to=e,this.lerp=n,this.duration=r,this.easing=h,this.currentTime=0,this.isRunning=!0,null==a||a(),this.onUpdate=c},t}(),s=/*#__PURE__*/function(){function t(t){var e,i,o=this,n=void 0===t?{}:t,s=n.wrapper,r=n.content,l=n.autoResize,h=void 0===l||l;if(this.resize=function(){o.onWrappe...
-} catch(e) { console.warn('Error loading Lenis:', e); } })();
-
-// === Swiper (from CDN) ===
-(function() { try {
-var Swiper=function(){"use strict";function e(e){return null!==e&&"object"==typeof e&&"constructor"in e&&e.constructor===Object}function t(s,a){void 0===s&&(s={}),void 0===a&&(a={});const i=["__proto__","constructor","prototype"];Object.keys(a).filter((e=>i.indexOf(e)<0)).forEach((i=>{void 0===s[i]?s[i]=a[i]:e(a[i])&&e(s[i])&&Object.keys(a[i]).length>0&&t(s[i],a[i])}))}const s={body:{},addEventListener(){},removeEventListener(){},activeElement:{blur(){},nodeName:""},querySelector:()=>null,querySelectorAll:()=>[],getElementById:()=>null,createEvent:()=>({initEvent(){}}),createElement:()=>({children:[],childNodes:[],style:{},setAttribute(){},getElementsByTagName:()=>[]}),createElementNS:()=>({}),importNode:()=>null,location:{hash:"",host:"",hostname:"",href:"",origin:"",pathname:"",protocol:"",search:""}};function a(){const e="undefined"!=typeof document?document:{};return t(e,s),e}const i={document:s,navigator:{userAgent:""},location:{hash:"",host:"",hostname:"",href:"",origin:"",pathname:"",protocol:"",search:""},history:{replaceState(){},pushState(){},go(){},back(){}},CustomEvent:function(){return this},addEventListener(){},removeEventListener(){},getComputedStyle:()=>({getPropertyValue:()=>""}),Image(){},Date(){},screen:{},setTimeout(){},clearTimeout(){},matchMedia:()=>({}),requestAnimationFrame:e=>"undefined"==typeof setTimeout?(e(),null):setTimeout(e,0),cancelAnimationFrame(e){"undefined"!=typeof setTimeout&&clearTimeout(e)}};function r(){const e="undefined"!=typeof window?window:{};return t(e,i),e}function n(e){return void 0===e&&(e=""),e.trim().split(" ").filter((e=>!!e.trim()))}function l(e,t){return void 0===t&&(t=0),setTimeout(e,t)}function o(){return Date.now()}function d(e,t){void 0===t&&(t="x");const s=r();let a,i,n;const l=function(e){const t=r();let s;return t.getComputedStyle&&(s=t.getComputedStyle(e,null)),!s&&e.currentStyle&&(s=e.currentStyle),s||(s=e.style),s}(e);return s.WebKitCSSMatrix?(i=l.transform||l.webkitTransform,i.split(",").length>6&&(i=i...
-} catch(e) { console.warn('Error loading Swiper:', e); } })();
-
-// === GSAP (from CDN) ===
-(function() { try {
-/*! GSAP */var gsap,ScrollTrigger;!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports):"function"==typeof define&&define.amd?define(["exports"],e):e((t=t||self).window=t.window||{})}(this,function(T){"use strict";function i(t){return"string"==typeof t}function u(t){return"function"==typeof t}function g(t){return"number"==typeof t}function v(t){return void 0===t}function y(t){return"object"==typeof t}function b(t){return"//"===t.substr(0,2)}function w(t,e){for(var i in e)t[i]=e[i];return t}function E(t,e){for(var i in e)"__proto__"!==i&&"constructor"!==i&&"prototype"!==i&&(t[i]=y(e[i])?E(t[i]||(t[i]={}),e[i]):e[i]);return t}function S(t,e){var i,o=t.parentNode;if(o)for(var r=o.children;r.length>1e5;)r.length=1e5;if(i=r.indexOf(t),e){if(i||!o||o.firstChild===t)return;o.insertBefore(t,o.firstChild)}else i+1<r.length&&o.appendChild(t);return t}function C(t){return t&&0===t._gsap&&t}...
-} catch(e) { console.warn('Error loading GSAP:', e); } })();
-
-// =============================================================
-//  Custom Application Code
-// =============================================================
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Mobile Menu Toggle
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
-    document.addEventListener('click', (e) => {
-      if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.remove('active');
-      }
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
-  // 2. Navigation Styling on Scroll
   const nav = document.getElementById('main-nav');
   if (nav) {
     const navLogoText = document.querySelector('.nav-logo-text');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
+      const scrolled = window.scrollY > 100;
+      if (scrolled) {
         nav.classList.add('glass', 'py-4', 'shadow-xl');
         nav.classList.remove('py-6');
         if (navLogoText) { navLogoText.classList.remove('text-white'); navLogoText.classList.add('text-blue-950'); }
         document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('text-white/80'); link.classList.add('text-blue-950/70');
+          link.classList.remove('text-blue-950/70'); link.classList.add('text-white/80');
         });
       } else {
         nav.classList.remove('glass', 'py-4', 'shadow-xl');
         nav.classList.add('py-6');
         if (navLogoText) { navLogoText.classList.add('text-white'); navLogoText.classList.remove('text-blue-950'); }
         document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.add('text-white/80'); link.classList.remove('text-blue-950/70');
+          link.classList.remove('text-blue-950/70'); link.classList.add('text-white/80');
         });
       }
-    });
-  }
-
-  // 3. Initialize Lenis Smooth Scrolling
-  if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Integrate Lenis with GSAP ScrollTrigger
-    if (typeof ScrollTrigger !== 'undefined') {
-      lenis.on('scroll', ScrollTrigger.update);
-      if (typeof gsap !== 'undefined') {
-        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-        gsap.ticker.lagSmoothing(0);
+      if (backToTop) {
+        backToTop.style.display = scrolled ? 'flex' : 'none';
       }
-    }
+    });
   }
 
-  // 4. GSAP Animations
   if (typeof gsap !== 'undefined') {
 
-    // Parallax Hero Animation
     if (document.querySelector('.parallax-bg') && typeof ScrollTrigger !== 'undefined') {
       gsap.to('.parallax-bg', {
         scrollTrigger: { trigger: '.hero-jumbotron', start: 'top top', end: 'bottom top', scrub: true },
@@ -102,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Reveal Animations
     const revealItems = gsap.utils.toArray('.reveal-up');
     revealItems.forEach((el) => {
       gsap.fromTo(el,
@@ -113,30 +53,39 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     });
 
-    // FAQ Accordion Logic
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(q => {
+    document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {
-        const parent = q.parentElement;
-        const answer = q.nextElementSibling;
-        const chevron = q.querySelector('.faq-chevron');
+        const parent = q.closest('.faq-item');
+        const answer = parent.querySelector('.faq-answer');
+        const chevron = parent.querySelector('.faq-chevron');
+        const isOpen = parent.classList.contains('active');
 
-        document.querySelectorAll('.faq-item').forEach(item => {
-          if (item !== parent && item.classList.contains('active')) {
+        document.querySelectorAll('.faq-item.active').forEach(item => {
+          if (item !== parent) {
             item.classList.remove('active');
-            gsap.to(item.querySelector('.faq-answer'), { height: 0, duration: 0.4, ease: "power2.inOut" });
-            gsap.to(item.querySelector('.faq-chevron'), { rotation: 0, duration: 0.4 });
+            const a = item.querySelector('.faq-answer');
+            gsap.to(a, { height: 0, duration: 0.3, ease: "power2.inOut", onComplete: () => { a.classList.add('h-0'); a.style.height = ''; } });
+            gsap.to(item.querySelector('.faq-chevron'), { rotation: 0, duration: 0.3 });
           }
         });
 
-        const isActive = parent.classList.toggle('active');
-        gsap.to(answer, { height: isActive ? 'auto' : 0, duration: 0.4, ease: "power2.inOut" });
-        gsap.to(chevron, { rotation: isActive ? 180 : 0, duration: 0.4 });
+        if (isOpen) {
+          parent.classList.remove('active');
+          gsap.to(answer, { height: 0, duration: 0.3, ease: "power2.inOut", onComplete: () => { answer.classList.add('h-0'); answer.style.height = ''; } });
+          gsap.to(chevron, { rotation: 0, duration: 0.3 });
+        } else {
+          answer.classList.remove('h-0');
+          parent.classList.add('active');
+          gsap.set(answer, { height: 'auto' });
+          const h = answer.offsetHeight;
+          gsap.set(answer, { height: 0 });
+          gsap.to(answer, { height: h, duration: 0.3, ease: "power2.inOut", onComplete: () => { answer.style.height = ''; } });
+          gsap.to(chevron, { rotation: 180, duration: 0.3 });
+        }
       });
     });
   }
 
-  // 5. Initialize Swiper
   if (typeof Swiper !== 'undefined') {
     try {
       new Swiper('.testSwiper', {
@@ -147,11 +96,117 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch(e) {}
 
     try {
-      new Swiper('.countrySwiper', {
-        slidesPerView: 'auto', spaceBetween: 30, centeredSlides: false,
-        loop: true, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+      const countrySwiper = new Swiper('.countrySwiper', {
+        slidesPerView: 'auto', spaceBetween: 20, centeredSlides: false,
+        loop: true, allowTouchMove: true,
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        breakpoints: { 320: { spaceBetween: 12 }, 640: { spaceBetween: 16 }, 1024: { spaceBetween: 20 } }
       });
+      let interval = setInterval(() => { try { countrySwiper.slideNext(); } catch(e) {} }, 2500);
+      const sliderEl = document.querySelector('.countrySwiper');
+      if (sliderEl) {
+        sliderEl.addEventListener('mouseenter', () => clearInterval(interval));
+        sliderEl.addEventListener('mouseleave', () => {
+          clearInterval(interval);
+          interval = setInterval(() => { try { countrySwiper.slideNext(); } catch(e) {} }, 2500);
+        });
+      }
     } catch(e) {}
   }
 
+  const chatbotBtn = document.getElementById('chatbot-btn');
+  const chatbotPanel = document.getElementById('chatbot-panel');
+  const chatbotMessages = document.getElementById('chatbot-messages');
+  const chatbotInput = document.getElementById('chatbot-input');
+  const chatbotSend = document.getElementById('chatbot-send');
+  const suggestions = document.querySelectorAll('#chatbot-suggestions button');
+
+  if (chatbotBtn && chatbotPanel && chatbotMessages && chatbotInput && chatbotSend) {
+
+    const knowledge = [
+      { q: /services|offer|what do you do/i,
+        a: 'SeaHistoryChecks provides comprehensive vessel reports using HIN (Hull Identification Number) or HULL number. Our reports include: Accident & Salvage History, Title & Lien Checks, Recall Lookups, Technical Specifications, Ownership History, and Theft Records.' },
+      { q: /price|cost|pricing|how much|fee|charges/i,
+        a: 'Our standard vessel report is priced at <b>$29.99</b>. For detailed pricing and any current discounts, please visit our <a href="pricings.html">Pricing page</a>.' },
+      { q: /how long|delivery|time|wait|when/i,
+        a: 'Reports are typically delivered within <b>12 hours</b> of placing your order. Most reports are ready in under 6 hours. You will receive an email notification once your report is ready.' },
+      { q: /country|coverage|global|serve|where/i,
+        a: 'We serve <b>29 countries</b> globally including USA, Canada, UK, Ireland, New Zealand, Australia, Germany, France, Netherlands, Spain, Italy, Greece, and many more across Europe and North America.' },
+      { q: /how (does it|to) work|process|how (can|do) i/i,
+        a: 'Simply enter your vessel\'s HIN or HULL number in the search bar on our homepage. We verify the data through USCG, Lloyds, NMVTIS, and NICB. Your report is delivered within 12 hours via email.' },
+      { q: /what (information|data) (is )?included|what.*report|report contain/i,
+        a: 'Each report includes: Accident & Salvage History, Title & Lien Information, Recall Notices, Technical Specs (length, year, make), Ownership Records, Theft & Recovery Status, and NMVTIS compliance data.' },
+      { q: /contact|support|email|phone|reach/i,
+        a: 'You can reach us at <b>seahistorychecksofficial@gmail.com</b> or visit our <a href="contact.html">Contact page</a>. We typically respond within 24 hours.' },
+      { q: /hi|hello|hey|good morning|good afternoon|good evening/i,
+        a: 'Hello! Welcome to SeaHistoryChecks. How can I assist you today? You can ask about our vessel reports, pricing, coverage, or anything else.' },
+      { q: /about|company|who are you/i,
+        a: 'SeaHistoryChecks is a maritime data intelligence service that provides detailed boat and ship reports. We aggregate data from USCG, Lloyds, NMVTIS, NICB, and other trusted sources to ensure transparency for buyers, sellers, and researchers.' },
+      { q: /refund|cancel|money back|guarantee/i,
+        a: 'We strive for accuracy. If you have an issue with your report, please contact us at <b>seahistorychecksofficial@gmail.com</b> and we will address your concerns promptly.' },
+      { q: /safe|secure|privacy|data|trust/i,
+        a: 'Your data and privacy are important to us. We use secure encryption for all transactions. Please see our <a href="policy.html">Privacy Policy</a> for full details.' },
+      { q: /report (type|type of)|what (kinds|types)|difference/i,
+        a: 'We offer comprehensive reports that bundle accident history, title checks, recall lookups, specs, ownership records, and theft data into one complete package.' },
+    ];
+
+    function findAnswer(text) {
+      for (const item of knowledge) {
+        if (item.q.test(text)) return item.a;
+      }
+      return 'I\'m not sure about that. Please try one of the suggestions above, or contact us at <b>seahistorychecksofficial@gmail.com</b> for more help.';
+    }
+
+    function addMessage(text, type) {
+      const msg = document.createElement('div');
+      msg.className = 'chatbot-msg ' + type;
+      msg.innerHTML = text;
+      chatbotMessages.appendChild(msg);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function showTyping() {
+      const el = document.createElement('div');
+      el.className = 'chatbot-msg bot typing-wrap';
+      el.id = 'typing-el';
+      el.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+      chatbotMessages.appendChild(el);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function hideTyping() {
+      const el = document.getElementById('typing-el');
+      if (el) el.remove();
+    }
+
+    function handleQuery(query) {
+      if (!query.trim()) return;
+      addMessage(query, 'user');
+      chatbotInput.value = '';
+      showTyping();
+      setTimeout(function() {
+        hideTyping();
+        addMessage(findAnswer(query), 'bot');
+      }, 600 + Math.random() * 400);
+    }
+
+    chatbotBtn.addEventListener('click', function() {
+      chatbotBtn.classList.toggle('active');
+      chatbotPanel.classList.toggle('active');
+      if (chatbotPanel.classList.contains('active')) {
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+    });
+
+    chatbotSend.addEventListener('click', function() { handleQuery(chatbotInput.value); });
+    chatbotInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleQuery(chatbotInput.value);
+    });
+
+    suggestions.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        handleQuery(btn.getAttribute('data-query'));
+      });
+    });
+  }
 });
